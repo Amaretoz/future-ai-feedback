@@ -91,6 +91,9 @@ const SurveyForm = ({ onComplete, onBack }: SurveyFormProps) => {
         if (formData.role.value === 'Anders' && !formData.role.other) {
           newErrors['role.other'] = 'Specificeer andere rol';
         }
+        if (formData.revenue.value === 'Anders' && !formData.revenue.other) {
+          newErrors['revenue.other'] = 'Specificeer andere omzetcategorie';
+        }
         break;
       
       case 2:
@@ -120,8 +123,14 @@ const SurveyForm = ({ onComplete, onBack }: SurveyFormProps) => {
       case 4:
         if (!formData.willing_to_pay) newErrors.willing_to_pay = 'Betalingsbereidheid is verplicht';
         if (!formData.openness) newErrors.openness = 'Openheid voor gebruik is verplicht';
+        if (formData.extra_features.values.includes('Anders') && !formData.extra_features.other) {
+          newErrors['extra_features.other'] = 'Specificeer andere functie';
+        }
         if (formData.pilot_opt_in && !formData.email) {
           newErrors.email = 'E-mail is verplicht voor pilot deelname';
+        }
+        if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+          newErrors.email = 'Voer een geldig e-mailadres in';
         }
         break;
     }

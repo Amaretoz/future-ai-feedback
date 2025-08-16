@@ -1,70 +1,65 @@
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Professional AI Survey Design System - HSL Colors Only */
-
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 25% 27%;
-
+    --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
-
+    --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
-
-    /* Professional blue for trust */
-    --primary: 220 85% 40%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 215 20% 96%;
-    --secondary-foreground: 215 25% 27%;
-
-    --muted: 215 16% 96%;
-    --muted-foreground: 215 13% 55%;
-
-    --accent: 215 16% 92%;
-    --accent-foreground: 215 25% 27%;
-
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
-    --ring: 220 85% 40%;
-
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
     --radius: 0.75rem;
-
+    
     /* Survey specific colors */
-    --trust-green: 142 70% 45%;
-    --progress-bg: 215 16% 92%;
-    --form-step: 215 25% 27%;
-    --help-text: 215 13% 55%;
+    --trust-green: 142 76% 36%;
+    --progress-bg: 214.3 31.8% 91.4%;
+    --form-step: 221.2 83.2% 53.3%;
+    --help-text: 215.4 16.3% 46.9%;
   }
 
   .dark {
-    --background: 215 30% 6%;
-    --foreground: 215 20% 95%;
-    --card: 215 30% 8%;
-    --card-foreground: 215 20% 95%;
-    --popover: 215 30% 8%;
-    --popover-foreground: 215 20% 95%;
-    --primary: 220 85% 60%;
-    --primary-foreground: 215 30% 6%;
-    --secondary: 215 30% 12%;
-    --secondary-foreground: 215 20% 95%;
-    --muted: 215 30% 12%;
-    --muted-foreground: 215 16% 65%;
-    --accent: 215 30% 16%;
-    --accent-foreground: 215 20% 95%;
-    --destructive: 0 70% 60%;
-    --destructive-foreground: 215 20% 95%;
-    --border: 215 30% 16%;
-    --input: 215 30% 16%;
-    --ring: 220 85% 60%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+    
+    /* Survey specific colors for dark mode */
+    --trust-green: 142 76% 36%;
+    --progress-bg: 217.2 32.6% 17.5%;
+    --form-step: 217.2 91.2% 59.8%;
+    --help-text: 215 20.2% 65.1%;
   }
 }
 
@@ -72,93 +67,102 @@
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-  }
-
-  /* Focus styles for accessibility */
-  *:focus-visible {
-    @apply outline-2 outline-offset-2 outline-primary;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
   }
 }
 
 @layer components {
-  /* Hero section styles */
+  /* Hero section styling */
   .hero-section {
-    @apply bg-gradient-to-br from-background via-secondary/30 to-background;
+    @apply bg-gradient-to-b from-background to-secondary/30;
   }
 
+  /* Button variants */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50 transition-colors;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring transition-colors;
+  }
+
+  /* Trust and security indicators */
   .trust-badge {
-    @apply inline-flex items-center gap-2 px-3 py-1.5 bg-secondary/80 text-muted-foreground text-sm rounded-full border;
+    @apply inline-flex items-center gap-2 rounded-full bg-trust-green/10 px-3 py-1 text-xs font-medium text-trust-green;
   }
 
-  /* Form styles */
+  .security-indicator {
+    @apply inline-flex items-center gap-2 text-xs text-trust-green;
+  }
+
+  /* Form styling */
   .form-card {
-    @apply bg-card border rounded-2xl shadow-sm p-8;
+    @apply rounded-2xl bg-card p-8 shadow-sm border border-border;
   }
 
-  .form-step-header {
-    @apply text-xl font-semibold text-form-step mb-6;
-  }
-
-  .progress-bar {
-    @apply w-full bg-progress-bg rounded-full h-2;
-  }
-
-  .progress-fill {
-    @apply bg-primary h-full rounded-full transition-all duration-300 ease-out;
-  }
-
-  /* Field styles */
   .field-group {
     @apply space-y-2;
   }
 
   .field-label {
-    @apply text-sm font-medium text-foreground;
+    @apply block text-sm font-semibold text-foreground;
   }
 
   .field-required {
     @apply text-destructive;
   }
 
+  .field-error {
+    @apply text-sm text-destructive font-medium;
+  }
+
   .field-help {
     @apply text-xs text-help-text;
   }
 
-  .field-error {
-    @apply text-xs text-destructive mt-1;
+  /* Progress bar */
+  .progress-bar {
+    @apply h-2 w-full overflow-hidden rounded-full bg-progress-bg;
   }
 
-  /* Radio and checkbox styles */
+  .progress-fill {
+    @apply h-full bg-primary transition-all duration-500 ease-out;
+  }
+
+  /* Radio group styling */
   .radio-group {
     @apply space-y-3;
   }
 
   .radio-item {
-    @apply flex items-center space-x-3;
+    @apply flex items-start gap-3;
   }
 
   .radio-input {
-    @apply w-4 h-4 text-primary border-input focus:ring-2 focus:ring-primary;
+    @apply mt-0.5 h-4 w-4 border-gray-300 text-primary focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
 
+  /* Checkbox group styling */
   .checkbox-group {
-    @apply space-y-3;
+    @apply grid gap-3 sm:grid-cols-1;
   }
 
   .checkbox-item {
-    @apply flex items-start space-x-3;
+    @apply flex items-start gap-3;
   }
 
   .checkbox-input {
-    @apply w-4 h-4 text-primary border-input rounded focus:ring-2 focus:ring-primary mt-0.5;
+    @apply mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
 
-  /* Likert scale styles */
+  /* Likert scale styling */
   .likert-scale {
-    @apply flex items-center justify-between gap-2;
+    @apply flex items-center justify-between gap-2 sm:gap-4;
   }
 
   .likert-item {
@@ -166,72 +170,25 @@
   }
 
   .likert-radio {
-    @apply w-4 h-4 text-primary border-input focus:ring-2 focus:ring-primary;
+    @apply h-4 w-4 border-gray-300 text-primary focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
 
   .likert-label {
-    @apply text-xs text-center text-muted-foreground max-w-20;
+    @apply text-xs sm:text-sm text-center text-muted-foreground max-w-[80px] sm:max-w-none;
   }
+}
 
-  /* Button variants */
-  .btn-primary {
-    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-medium transition-colors focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-
-  .btn-secondary {
-    @apply bg-secondary hover:bg-secondary/80 text-secondary-foreground px-6 py-3 rounded-lg font-medium transition-colors focus:ring-2 focus:ring-ring focus:ring-offset-2;
-  }
-
-  .btn-ghost {
-    @apply hover:bg-accent hover:text-accent-foreground px-6 py-3 rounded-lg font-medium transition-colors;
-  }
-
-  /* Trust and security elements */
-  .security-indicator {
-    @apply flex items-center gap-2 text-sm text-trust-green;
-  }
-
-  .trust-logos {
-    @apply flex items-center gap-6 opacity-60;
-  }
-
-  /* Animations */
-  .slide-up {
-    @apply animate-[slideUp_0.3s_ease-out];
-  }
-
+@layer utilities {
+  /* Animation utilities */
   .fade-in {
-    @apply animate-[fadeIn_0.5s_ease-out];
+    @apply animate-in fade-in-0 duration-300;
   }
-}
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  .slide-up {
+    @apply animate-in slide-in-from-bottom-4 duration-500;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Mobile-first responsive utilities */
-@media (max-width: 640px) {
-  .likert-scale {
-    @apply flex-col gap-4;
-  }
-  
-  .form-card {
-    @apply p-6;
+  .scale-in {
+    @apply animate-in zoom-in-95 duration-200;
   }
 }

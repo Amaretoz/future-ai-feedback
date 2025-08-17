@@ -50,15 +50,15 @@ const Index = () => {
           {/* Trust badges */}
           <div className="flex flex-wrap justify-center gap-4 mb-8 fade-in">
             <div className="trust-badge">
-              <Shield className="w-4 h-4 text-trust-green" />
+              <Shield className="w-4 h-4 text-green-600" />
               Privacy-vriendelijk
             </div>
             <div className="trust-badge">
-              <Lock className="w-4 h-4 text-trust-green" />
+              <Lock className="w-4 h-4 text-green-600" />
               Versleutelde verzending
             </div>
             <div className="trust-badge">
-              <CheckCircle className="w-4 h-4 text-trust-green" />
+              <CheckCircle className="w-4 h-4 text-green-600" />
               Alleen noodzakelijke vragen
             </div>
           </div>
@@ -85,11 +85,11 @@ const Index = () => {
           {/* Quick info */}
           <div className="flex flex-wrap justify-center gap-6 mt-12 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-trust-green rounded-full"></span>
+              <span className="w-2 h-2 bg-green-600 rounded-full"></span>
               Invultijd: ±2 minuten
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-trust-green rounded-full"></span>
+              <span className="w-2 h-2 bg-green-600 rounded-full"></span>
               U kunt op elk moment stoppen
             </div>
           </div>
@@ -156,15 +156,15 @@ const Index = () => {
               <div className="space-y-2 text-sm text-muted-foreground">
                 <div className="flex justify-between">
                   <span>TLS/HTTPS</span>
-                  <CheckCircle className="w-4 h-4 text-trust-green" />
+                  <CheckCircle className="w-4 h-4 text-green-600" />
                 </div>
                 <div className="flex justify-between">
                   <span>GDPR compliant</span>
-                  <CheckCircle className="w-4 h-4 text-trust-green" />
+                  <CheckCircle className="w-4 h-4 text-green-600" />
                 </div>
                 <div className="flex justify-between">
                   <span>Beperkte bewaartermijn</span>
-                  <CheckCircle className="w-4 h-4 text-trust-green" />
+                  <CheckCircle className="w-4 h-4 text-green-600" />
                 </div>
               </div>
             </div>

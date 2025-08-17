@@ -1,65 +1,54 @@
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 13% 98%;
+    --foreground: 220 13% 9%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 13% 9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
+    --popover-foreground: 220 13% 9%;
+    --primary: 220 83% 53%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 9%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 13% 45%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 13% 9%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.75rem;
-    
-    /* Survey specific colors */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 83% 53%;
+    --radius: 0.5rem;
     --trust-green: 142 76% 36%;
-    --progress-bg: 214.3 31.8% 91.4%;
-    --form-step: 221.2 83.2% 53.3%;
-    --help-text: 215.4 16.3% 46.9%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --background: 220 13% 9%;
+    --foreground: 220 13% 98%;
+    --card: 220 13% 12%;
+    --card-foreground: 220 13% 98%;
+    --popover: 220 13% 12%;
+    --popover-foreground: 220 13% 98%;
+    --primary: 220 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 220 13% 98%;
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 13% 63%;
+    --accent: 220 13% 15%;
+    --accent-foreground: 220 13% 98%;
+    --destructive: 0 62% 30%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
-    
-    /* Survey specific colors for dark mode */
+    --border: 220 13% 15%;
+    --input: 220 13% 15%;
+    --ring: 220 83% 53%;
     --trust-green: 142 76% 36%;
-    --progress-bg: 217.2 32.6% 17.5%;
-    --form-step: 217.2 91.2% 59.8%;
-    --help-text: 215 20.2% 65.1%;
   }
 }
 
@@ -67,128 +56,135 @@
   * {
     @apply border-border;
   }
-  
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    font-feature-settings: 'cv11', 'ss01';
-    font-variation-settings: 'opsz' 32;
   }
 }
 
-@layer components {
-  /* Hero section styling */
-  .hero-section {
-    @apply bg-gradient-to-b from-background to-secondary/30;
-  }
+/* Survey specific styles */
+.hero-section {
+  background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 100%);
+}
 
-  /* Button variants */
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50 transition-colors;
-  }
+.trust-badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 bg-secondary border rounded-full text-sm text-muted-foreground;
+}
 
-  .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring transition-colors;
-  }
+.btn-primary {
+  @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors;
+}
 
-  /* Trust and security indicators */
-  .trust-badge {
-    @apply inline-flex items-center gap-2 rounded-full bg-trust-green/10 px-3 py-1 text-xs font-medium text-trust-green;
-  }
+.form-card {
+  @apply bg-card border rounded-lg p-6 shadow-sm;
+}
 
-  .security-indicator {
-    @apply inline-flex items-center gap-2 text-xs text-trust-green;
-  }
+.field-group {
+  @apply space-y-2;
+}
 
-  /* Form styling */
-  .form-card {
-    @apply rounded-2xl bg-card p-8 shadow-sm border border-border;
-  }
+.field-label {
+  @apply text-sm font-medium text-foreground;
+}
 
-  .field-group {
-    @apply space-y-2;
-  }
+.field-required {
+  @apply text-destructive;
+}
 
-  .field-label {
-    @apply block text-sm font-semibold text-foreground;
-  }
+.field-error {
+  @apply text-sm text-destructive mt-1;
+}
 
-  .field-required {
-    @apply text-destructive;
-  }
+.field-help {
+  @apply text-xs text-muted-foreground;
+}
 
-  .field-error {
-    @apply text-sm text-destructive font-medium;
-  }
+.radio-group {
+  @apply space-y-2;
+}
 
-  .field-help {
-    @apply text-xs text-help-text;
-  }
+.radio-item {
+  @apply flex items-center gap-3;
+}
 
-  /* Progress bar */
-  .progress-bar {
-    @apply h-2 w-full overflow-hidden rounded-full bg-progress-bg;
-  }
+.radio-input {
+  @apply w-4 h-4 text-primary border-border focus:ring-primary focus:ring-2;
+}
 
-  .progress-fill {
-    @apply h-full bg-primary transition-all duration-500 ease-out;
-  }
+.checkbox-group {
+  @apply space-y-2;
+}
 
-  /* Radio group styling */
-  .radio-group {
-    @apply space-y-3;
-  }
+.checkbox-item {
+  @apply flex items-start gap-3;
+}
 
-  .radio-item {
-    @apply flex items-start gap-3;
-  }
+.checkbox-input {
+  @apply w-4 h-4 mt-0.5 text-primary border-border rounded focus:ring-primary focus:ring-2;
+}
 
-  .radio-input {
-    @apply mt-0.5 h-4 w-4 border-gray-300 text-primary focus:ring-2 focus:ring-primary focus:ring-offset-2;
-  }
+.likert-scale {
+  @apply flex items-center justify-between gap-2 max-w-lg;
+}
 
-  /* Checkbox group styling */
-  .checkbox-group {
-    @apply grid gap-3 sm:grid-cols-1;
-  }
+.likert-item {
+  @apply flex flex-col items-center gap-2;
+}
 
-  .checkbox-item {
-    @apply flex items-start gap-3;
-  }
+.likert-radio {
+  @apply w-4 h-4 text-primary border-border focus:ring-primary focus:ring-2;
+}
 
-  .checkbox-input {
-    @apply mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-2 focus:ring-primary focus:ring-offset-2;
-  }
+.likert-label {
+  @apply text-xs text-center text-muted-foreground;
+}
 
-  /* Likert scale styling */
-  .likert-scale {
-    @apply flex items-center justify-between gap-2 sm:gap-4;
-  }
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
 
-  .likert-item {
-    @apply flex flex-col items-center gap-2;
-  }
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}
 
-  .likert-radio {
-    @apply h-4 w-4 border-gray-300 text-primary focus:ring-2 focus:ring-primary focus:ring-offset-2;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-
-  .likert-label {
-    @apply text-xs sm:text-sm text-center text-muted-foreground max-w-[80px] sm:max-w-none;
+  to {
+    opacity: 1;
   }
 }
 
-@layer utilities {
-  /* Animation utilities */
-  .fade-in {
-    @apply animate-in fade-in-0 duration-300;
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  .slide-up {
-    @apply animate-in slide-in-from-bottom-4 duration-500;
-  }
+/* Progress bar */
+.progress-bar {
+  @apply w-full h-2 bg-secondary rounded-full overflow-hidden;
+}
 
-  .scale-in {
-    @apply animate-in zoom-in-95 duration-200;
-  }
+.progress-fill {
+  @apply h-full bg-primary transition-all duration-300 ease-out;
+}
+
+/* Step navigation */
+.step-nav {
+  @apply flex justify-between items-center pt-6 border-t;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-secondary-foreground px-4 py-2 rounded-lg font-medium hover:bg-secondary/80 transition-colors;
+}
+
+.btn-outline {
+  @apply border border-border bg-background text-foreground px-4 py-2 rounded-lg font-medium hover:bg-secondary transition-colors;
 }
